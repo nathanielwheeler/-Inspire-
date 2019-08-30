@@ -1,4 +1,4 @@
-import Weather from "../models/weather.js";
+import Weather from "../models/Weather.js";
 
 // @ts-ignore
 const weatherApi = axios.create({

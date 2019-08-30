@@ -2,3 +2,56 @@
   color: red;
   font-size: 2em;
 }
+.grid-hello {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 240px 240px 1fr;
+  grid-template-rows: 1fr 240px 360px 240px 1fr;
+  grid-template-areas: 
+  "header header header header"
+  ". top top ."
+  ". left right ."
+  ". bottom bottom ."
+  "footer footer footer footer";
+}
+.grid-list {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 240px 240px 1fr 360px 1fr;
+  grid-template-rows: 1fr 120px 360px 120px 1fr;
+  grid-template-areas:
+  "header header header header header header"
+  " . top top top top ."
+  ". left right . list ."
+  ". bottom bottom . list ."
+  "footer footer footer footer footer footer";
+}
+
+.grid-header {
+  grid-area: header;
+  background: rgba(139, 0, 0, 0.536);
+}
+.grid-top {
+  grid-area: top;
+  background: rgba(0, 139, 139, 0.502);
+}
+.grid-left {
+  grid-area: left;
+  background: rgba(0, 0, 139, 0.529);
+}
+.grid-right {
+  grid-area: right;
+  background: rgba(0, 100, 0, 0.527);
+}
+.grid-bottom {
+  grid-area: bottom;
+  background: rgba(139, 0, 139, 0.5);
+}
+.grid-footer {
+  grid-area: footer;
+  background: rgba(184, 135, 11, 0.473);
+}
+.grid-list {
+  grid-area: list;
+  background: rgba(171, 171, 171, 0.5);
+}
