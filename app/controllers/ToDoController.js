@@ -1,7 +1,7 @@
 import ToDoService from "../services/ToDoService.js";
 
 
-const _todoService = new ToDoService()
+const _ts = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {
@@ -10,15 +10,15 @@ function _drawTodos() {
 
 //NOTE Keep an eye on your console for any of these errors
 function _drawError() {
-	console.error('[TODO ERROR]', _todoService.TodoError)
+	console.error('[TODO ERROR]', _ts.TodoError)
 }
 
 
 export default class TodoController {
 	constructor() {
 		//TODO Remember to register your subscribers
-		_todoService.addSubscriber('error', _drawError)
-		_todoService.getTodos()
+		_ts.addSubscriber('error', _drawError)
+		_ts.getTodos()
 	}
 
 	addTodo(e) {
@@ -27,17 +27,17 @@ export default class TodoController {
 		var todo = {
 			//TODO build the todo object from the data that comes into this method
 		}
-		_todoService.addTodo(todo)
+		_ts.addTodo(todo)
 	}
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be toggled
 	toggleTodoStatus(todoId) {
-		_todoService.toggleTodoStatus(todoId)
+		_ts.toggleTodoStatus(todoId)
 	}
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be deleted
 	removeTodo(todoId) {
-		_todoService.removeTodo(todoId)
+		_ts.removeTodo(todoId)
 	}
 
 
