@@ -10,5 +10,7 @@ export default class Weather {
 
     this.city = data.name
     this.kelvin = data.main.temp
+    this.fahrenheit = ((this.kelvin - 273.15) * (9 / 5)) + 32
+    this.celsius = this.kelvin - 273.15
   }
 }
