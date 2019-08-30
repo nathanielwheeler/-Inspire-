@@ -1,6 +1,7 @@
-import TodoService from "../services/todo-service.js";
+import ToDoService from "../services/ToDoService.js";
 
-const _todoService = new TodoService()
+
+const _todoService = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {

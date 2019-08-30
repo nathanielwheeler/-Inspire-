@@ -1,4 +1,4 @@
-import WeatherService from "../services/weather-service.js";
+import WeatherService from "../services/WeatherService.js";
 
 var _weatherService = new WeatherService()
 

@@ -1,3 +1,5 @@
+import Image from "../models/Image.js"
+
 // @ts-ignore
 const imgApi = axios.create({
 	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
