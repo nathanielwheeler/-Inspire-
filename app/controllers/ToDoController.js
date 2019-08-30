@@ -1,7 +1,7 @@
 import ToDoService from "../services/ToDoService.js";
 
 
-const _ts = new ToDoService()
+let _ts = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {

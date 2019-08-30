@@ -1,6 +1,6 @@
 import WeatherService from "../services/WeatherService.js";
 
-var _ws = new WeatherService()
+let _ws = new WeatherService()
 
 //NOTE The weather service and controller are mostly done, 
 //		you may wish to check out the model and include some additional data.
