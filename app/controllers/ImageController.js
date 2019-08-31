@@ -3,7 +3,9 @@ import ImageService from "../services/ImageService.js";
 let _is = new ImageService()
 
 function _drawImage() {
-    document.body.style.backgroundImage = _is.Image.url
+    console.log("image attempt");
+
+    document.body.style.background = `url(${_is.Image.url}) no-repeat fixed`
 }
 
 //TODO Create methods for constructor, and rendering the image to the page 
