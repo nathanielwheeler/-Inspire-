@@ -2,11 +2,15 @@
   color: red;
   font-size: 2em;
 }
+body {
+  background: #343028;
+  color: #FAD79A;
+}
 .grid-hello {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 240px 240px 1fr;
-  grid-template-rows: 1fr 180px 300px 120px 1fr;
+  grid-template-rows: 1fr 180px 180px 180px 3fr;
   grid-template-areas: 
   "header header header header"
   ". top top ."
@@ -18,7 +22,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 240px 240px 1fr 360px 1fr;
-  grid-template-rows: 1fr 180px 300px 120px 1fr;
+  grid-template-rows: 1fr 180px 180px 180px 3fr;
   grid-template-areas:
   "header header header header header header"
   " . top top top top ."
@@ -29,7 +33,6 @@
 
 .grid-header {
   grid-area: header;
-  background: rgba(139, 0, 0, 0.536);
 }
 .grid-top {
   grid-area: top;
@@ -37,27 +40,27 @@
 }
 .grid-left {
   grid-area: left;
-  background: rgba(0, 0, 139, 0.529);
+  place-self: center;
 }
 .grid-right {
   grid-area: right;
-  background: rgba(0, 100, 0, 0.527);
+  place-self: center;
 }
 .grid-bottom {
   grid-area: bottom;
-  background: rgba(139, 0, 139, 0.5);
+  place-self: center;
+  text-align: center;
 }
 .grid-footer {
   grid-area: footer;
-  background: rgba(184, 135, 11, 0.473);
+  place-self: end start;
 }
 .grid-tasklist {
   grid-area: tasklist;
-  background: rgba(171, 171, 171, 0.5);
+  place-self: center;
 }
 .quote-card {
   grid-area: top;
-  color: #FAD79A;
   background: #34302888;
   text-align: center;
   width: 480px;
@@ -65,4 +68,9 @@
 }
 .quote-card h6 {
 text-align: right;
+}
+.weather-card {
+  background: #34302888;
+  max-width: 240px;
+  padding: 15px 15px 5px 15px;
 }

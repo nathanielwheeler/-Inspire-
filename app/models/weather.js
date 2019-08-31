@@ -20,12 +20,26 @@ export default class Weather {
         // celsius: this.temp.low.kelvin - 273.15
       }
     }
+    this.getIconUrl() = { //FIXME
 
+    }
   }
 
   get Template() {
     return `
-    
+    <div class='weather-card'>
+      <div class='temp-flex'>
+        <h4>tempNum</h4>
+        <a onclick='app.controllers.weatherCtrl.tempTypeToggle()'>°F</a>
+      </div>
+      <div class='hi-temp-flex'>
+      </div>
+      <div class='lo-temp-flex'>
+      </div>
+      <div class='weather-icon-flex'>
+        <img src='${this.getIconUrl()}'>
+      </div>
+    </div>
     `
   }
 }
