@@ -12,7 +12,7 @@
   ". top top ."
   ". left right ."
   ". bottom bottom ."
-  "footer footer footer footer";
+  "footer . . . .";
 }
 .grid-list {
   min-height: 100vh;
@@ -22,9 +22,9 @@
   grid-template-areas:
   "header header header header header header"
   " . top top top top ."
-  ". left right . list ."
-  ". bottom bottom . list ."
-  "footer footer footer footer footer footer";
+  ". left right . tasklist ."
+  ". bottom bottom . tasklist ."
+  "footer . . . . .";
 }
 
 .grid-header {
@@ -51,7 +51,7 @@
   grid-area: footer;
   background: rgba(184, 135, 11, 0.473);
 }
-.grid-list {
-  grid-area: list;
+.grid-tasklist {
+  grid-area: tasklist;
   background: rgba(171, 171, 171, 0.5);
 }

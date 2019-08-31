@@ -5,7 +5,8 @@ let _is = new ImageService()
 function _drawImage() {
     console.log("image attempt");
 
-    document.body.style.background = `url(${_is.Image.url}) no-repeat fixed`
+    document.body.style.background = `url(${_is.Image.url}) no-repeat fixed`;
+    document.body.style.backgroundSize = "cover"
 }
 
 //TODO Create methods for constructor, and rendering the image to the page 
