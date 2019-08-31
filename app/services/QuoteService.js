@@ -26,7 +26,7 @@ export default class QuoteService {
 	}
 
 	addSubscriber(prop, fn) {
-		_subscribers[prop].pop(fn)
+		_subscribers[prop].push(fn)
 	}
 
 	getQuote() {
