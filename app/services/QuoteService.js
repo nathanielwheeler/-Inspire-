@@ -19,7 +19,6 @@ function _setState(prop, data) {
 	_subscribers[prop].forEach(fn => fn());
 }
 
-//TODO create methods to retrieve data trigger the update window when it is complete
 export default class QuoteService {
 	get Quote() {
 		return _state.quote
@@ -30,7 +29,6 @@ export default class QuoteService {
 	}
 
 	getQuote() {
-		console.log("Getting a quote");
 		_quoteApi.get().then(res => {
 			_setState('quote', new Quote(res.data))
 		}).catch(err => console.log(err))

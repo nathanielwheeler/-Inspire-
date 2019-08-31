@@ -1,6 +1,6 @@
 export default class Image {
-    constructor() {
-        console.log('img');
+    constructor(data) {
+        this.url = data.large_url
 
     }
 }

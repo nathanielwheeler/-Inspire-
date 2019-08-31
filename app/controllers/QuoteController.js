@@ -3,8 +3,6 @@ import QuoteService from "../services/QuoteService.js";
 let _qs = new QuoteService()
 
 function _drawQuote() {
-    console.log('drawin quote hopefully');
-
     document.getElementById('quote').innerHTML = _qs.Quote.Template
 }
 
