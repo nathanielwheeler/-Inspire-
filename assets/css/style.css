@@ -6,7 +6,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 240px 240px 1fr;
-  grid-template-rows: 1fr 240px 360px 240px 1fr;
+  grid-template-rows: 1fr 180px 300px 120px 1fr;
   grid-template-areas: 
   "header header header header"
   ". top top ."
@@ -18,7 +18,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 240px 240px 1fr 360px 1fr;
-  grid-template-rows: 1fr 120px 360px 120px 1fr;
+  grid-template-rows: 1fr 180px 300px 120px 1fr;
   grid-template-areas:
   "header header header header header header"
   " . top top top top ."
@@ -33,7 +33,7 @@
 }
 .grid-top {
   grid-area: top;
-  background: rgba(0, 139, 139, 0.502);
+  place-self: center;
 }
 .grid-left {
   grid-area: left;
@@ -54,4 +54,15 @@
 .grid-tasklist {
   grid-area: tasklist;
   background: rgba(171, 171, 171, 0.5);
+}
+.quote-card {
+  grid-area: top;
+  color: #FAD79A;
+  background: #34302888;
+  text-align: center;
+  width: 480px;
+  padding: 15px 15px 5px 15px;
+}
+.quote-card h6 {
+text-align: right;
 }

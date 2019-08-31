@@ -7,8 +7,10 @@ export default class Quote {
 
     get Template() {
         return `
-        <h5>${this.body}</h5>
-        <h6>— ${this.author}</h6>
+        <div class="quote-card"
+            <h5>${this.body}</h5>
+            <h6>— ${this.author}</h6>
+        </div>
         `
     }
 }
