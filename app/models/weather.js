@@ -5,8 +5,8 @@ export default class Weather {
     this.city = data.name
     this.temp = {
       current: {
-        kelvin: data.main.temp,
-        // fahrenheit: ((this.temp.current.kelvin - 273.15) * (9 / 5)) + 32,
+        kelvin: data.main.temp.toFixed(2),
+        fahrenheit: (((data.main.temp - 273.15) * (9 / 5)) + 32).toFixed(2),
         // celsius: this.temp.current.kelvin - 273.15
       },
       high: {
@@ -20,26 +20,26 @@ export default class Weather {
         // celsius: this.temp.low.kelvin - 273.15
       }
     }
-    this.getIconUrl() = { //FIXME
 
-    }
   }
 
   get Template() {
     return `
     <div class='weather-card'>
       <div class='temp-flex'>
-        <h4>tempNum</h4>
-        <a onclick='app.controllers.weatherCtrl.tempTypeToggle()'>°F</a>
+        <h4>${this.temp.current.fahrenheit} °F</h4>
       </div>
-      <div class='hi-temp-flex'>
-      </div>
-      <div class='lo-temp-flex'>
-      </div>
-      <div class='weather-icon-flex'>
-        <img src='${this.getIconUrl()}'>
-      </div>
+   
     </div>
     `
+    //   < a onclick = 'app.controllers.weatherCtrl.tempTypeToggle()' >°F</a >
+    // 
+    //   <div class='hi-temp-flex'>
+    //   </div >
+    //   <div class='lo-temp-flex'>
+    //   </div>
+    //   <div class='weather-icon-flex'>
+    //     <img src='${this.getIconUrl()}'>
+    //   </div>
   }
 }

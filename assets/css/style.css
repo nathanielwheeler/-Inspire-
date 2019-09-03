@@ -21,7 +21,7 @@ body {
 .grid-list {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 240px 240px 1fr 360px 1fr;
+  grid-template-columns: 2fr 240px 240px 1fr 360px 2fr;
   grid-template-rows: 1fr 180px 180px 180px 3fr;
   grid-template-areas:
   "header header header header header header"

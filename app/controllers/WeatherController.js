@@ -9,6 +9,7 @@ let _ws = new WeatherService()
 //TODO Complete rendering data to the screen
 function _drawWeather() {
 	console.log("THE WEATHER MAN SAYS:", _ws.Weather)
+	document.getElementById('weather').innerHTML = _ws.Weather.Template
 }
 
 export default class WeatherController {
