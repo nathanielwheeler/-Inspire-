@@ -5,7 +5,15 @@ let _ts = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {
+	let template = `
+		<div class='todo-card'>
+		<h4> Task Remaining: 0</h4>
+	`
+	console.log(_ts.getTodos());
 
+	template += _ts.getTodos()
+	template += `</div>`
+	document.getElementById('todos').innerHTML = template
 }
 
 //NOTE Keep an eye on your console for any of these errors
@@ -18,6 +26,7 @@ export default class TodoController {
 	constructor() {
 		//TODO Remember to register your subscribers
 		_ts.addSubscriber('error', _drawError)
+		_ts.addSubscriber('todos', _drawTodos)
 		_ts.getTodos()
 	}
 

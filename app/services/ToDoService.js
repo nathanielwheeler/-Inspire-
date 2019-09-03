@@ -3,7 +3,7 @@ import ToDo from "../models/ToDo.js"
 
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/nathan/todos/',
 	timeout: 3000
 });
 
@@ -34,10 +34,14 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				//TODO Handle this response from the server
+				_setState('todos', res.data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
+
+	// getTodoNumber() {
+	// 	let todoNumLength = _state.todos.length()
+	// }
 
 	addTodo(todo) {
 		todoApi.post('', todo)
@@ -65,5 +69,6 @@ export default class TodoService {
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
 	}
+
 
 }
