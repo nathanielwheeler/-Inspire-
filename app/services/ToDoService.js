@@ -38,9 +38,9 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				console.log("in the service getting todos: ", res.data);
-				//FIXME drill into res.data to get to the data array
-				_setState('todos', res.data)
+				console.log("in the service getting todos: ", res.data.data);
+				// FIXME drill into res.data to get to the data array
+				_setState('todos', res.data.data)
 			})
 			// .catch(err => _setState('error', err.response.data))
 			.catch(err => console.error(err))

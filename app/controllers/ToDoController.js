@@ -5,21 +5,10 @@ let _ts = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {
-	let template = `
-		<div class='todo-card'>
-		<h4> Task Remaining: 0</h4>
-		<ul>
-	`
-	let todos = _ts.Todos
-	todos.forEach((t) => {
-		template += `
-		<li>
-			<a onclick='app.controllers.todoCtrl.removeTodo(${this._id})'> 
-			${this.todo}
-		</li>
-		`
+	let template = ''
+	_ts.Todos.forEach((t) => {
+		template += t.Template()
 	})
-	template += `</ul></div>`
 	document.getElementById('todos').innerHTML = template
 }
 
@@ -39,9 +28,10 @@ export default class TodoController {
 
 	addTodo(e) {
 		e.preventDefault()
-		var form = e.target
-		var todo = {
+		let form = e.target
+		let todo = {
 			//TODO build the todo object from the data that comes into this method
+			description: form.description.value
 		}
 		_ts.addTodo(todo)
 	}
