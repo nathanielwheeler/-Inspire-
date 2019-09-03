@@ -26,6 +26,10 @@ export default class TodoService {
 		return _state.error
 	}
 
+	get Todos() {
+		return _state.todos
+	}
+
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
 	}
@@ -34,9 +38,12 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
+				console.log("in the service getting todos: ", res.data);
+				//FIXME drill into res.data to get to the data array
 				_setState('todos', res.data)
 			})
-			.catch(err => _setState('error', err.response.data))
+			// .catch(err => _setState('error', err.response.data))
+			.catch(err => console.error(err))
 	}
 
 	// getTodoNumber() {
@@ -61,6 +68,7 @@ export default class TodoService {
 			.then(res => {
 				//TODO do you care about this data? or should you go get something else?
 			})
+			//FIXME can't drill into err object with .response.data
 			.catch(err => _setState('error', err.response.data))
 	}
 

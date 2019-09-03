@@ -8,11 +8,18 @@ function _drawTodos() {
 	let template = `
 		<div class='todo-card'>
 		<h4> Task Remaining: 0</h4>
+		<ul>
 	`
-	console.log(_ts.getTodos());
-
-	template += _ts.getTodos()
-	template += `</div>`
+	let todos = _ts.Todos
+	todos.forEach((t) => {
+		template += `
+		<li>
+			<a onclick='app.controllers.todoCtrl.removeTodo(${this._id})'> 
+			${this.todo}
+		</li>
+		`
+	})
+	template += `</ul></div>`
 	document.getElementById('todos').innerHTML = template
 }
 
