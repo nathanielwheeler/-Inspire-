@@ -27,7 +27,7 @@ export default class TodoService {
 	}
 
 	get Todos() {
-		return _state.todos
+		return _state.todos.map(t => new ToDo(t))
 	}
 
 	addSubscriber(prop, fn) {
