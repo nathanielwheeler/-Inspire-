@@ -24,15 +24,8 @@
 	<div class="grid-tasklist">
 		<div class='todo-card'>
 			<h4> Tasks Remaining: 0</h4>
-			<form onsubmit="app.controllers.todoCtrl.addTodo(todo)">
-				<div class="input-group">
-					<div class="form-group">
-						<input type="text" class="form-control" name="todo" placeholder="To Do:" required>
-					</div>
-					<div class="form-group append">
-						<button class="btn btn-outline-success" type="submit">+</button>
-					</div>
-				</div>
+			<form onsubmit="app.controllers.todoCtrl.addTodo(event)">
+				<input type="text" name="description" placeholder="Task" required>
 			</form>
 			<ul id="todos">
 

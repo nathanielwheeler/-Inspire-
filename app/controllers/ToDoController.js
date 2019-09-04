@@ -5,9 +5,13 @@ let _ts = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {
+
+	console.log(_ts.Todos);
+
+	debugger
 	let template = ''
 	_ts.Todos.forEach((t) => {
-		template += t.Template()
+		template += t.Template
 	})
 	document.getElementById('todos').innerHTML = template
 }
@@ -26,9 +30,9 @@ export default class TodoController {
 		_ts.getTodos()
 	}
 
-	addTodo(e) {
-		e.preventDefault()
-		let form = e.target
+	addTodo(event) {
+		event.preventDefault();
+		let form = event.target
 		let todo = {
 			//TODO build the todo object from the data that comes into this method
 			description: form.description.value

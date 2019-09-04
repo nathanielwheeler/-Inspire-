@@ -39,6 +39,7 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				console.log("in the service getting todos: ", res.data.data);
+
 				// FIXME drill into res.data to get to the data array
 				_setState('todos', res.data.data)
 			})
@@ -54,8 +55,9 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+				_setState('todos', res.data.data)
 			})
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => console.error(err))
 	}
 
 	toggleTodoStatus(todoId) {
@@ -63,13 +65,19 @@ export default class TodoService {
 		//TODO Make sure that you found a todo, 
 		//		and if you did find one
 		//		change its completed status to whatever it is not (ex: false => true or true => false)
+		if (!todo) {
+			console.log('No such todo ID')
+		} else {
+			!todo.completed
+		}
 
 		todoApi.put(todoId, todo)
 			.then(res => {
 				//TODO do you care about this data? or should you go get something else?
+				_setState('todos', res.data.data)
 			})
 			//FIXME can't drill into err object with .response.data
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => console.error(err))
 	}
 
 	removeTodo(todoId) {
