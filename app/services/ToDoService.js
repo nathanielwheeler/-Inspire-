@@ -74,13 +74,14 @@ export default class TodoService {
 		if (!todo) {
 			console.log('No such todo ID')
 		} else {
-			!todo.completed
+			todo.completed == true ? todo.completed = false : todo.completed = true
 		}
 
 		todoApi.put(todoId, todo)
 			.then(res => {
+
 				//TODO do you care about this data? or should you go get something else?
-				_setState('todos', res.data.data)
+				_setState('todos', todo)
 			})
 			.catch(err => console.error(err))
 	}
