@@ -40,7 +40,6 @@ export default class TodoService {
 			.then(res => {
 				console.log("in the service getting todos: ", res.data.data);
 
-				// FIXME drill into res.data to get to the data array
 				_setState('todos', res.data.data)
 			})
 			// .catch(err => _setState('error', err.response.data))
@@ -52,12 +51,18 @@ export default class TodoService {
 	// }
 
 	addTodo(todo) {
-		todoApi.post('', todo)
-			.then(res => {
-				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-				_setState('todos', res.data.data)
-			})
-			.catch(err => console.error(err))
+		let redundantTodo = _state.todos.find(t => todo == t.description)
+		if (redundantTodo) {
+			if (window.confirm('You already have a list with this name.  Create a duplicate?')) {
+			}
+			debugger
+			todoApi.post('', todo)
+				.then(res => {
+					//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+					_setState('todos', res.data.data)
+				})
+				.catch(err => console.error(err))
+		}
 	}
 
 	toggleTodoStatus(todoId) {
@@ -76,7 +81,6 @@ export default class TodoService {
 				//TODO do you care about this data? or should you go get something else?
 				_setState('todos', res.data.data)
 			})
-			//FIXME can't drill into err object with .response.data
 			.catch(err => console.error(err))
 	}
 

@@ -5,10 +5,8 @@ let _ts = new ToDoService()
 
 //TODO Create the render function
 function _drawTodos() {
-
 	console.log(_ts.Todos);
 
-	debugger
 	let template = ''
 	_ts.Todos.forEach((t) => {
 		template += t.Template
