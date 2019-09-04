@@ -23,9 +23,9 @@
 	</div> -->
 	<div class="grid-tasklist">
 		<div class='todo-card'>
-			<h4> Tasks Remaining: 0</h4>
+			<h4> Tasks Remaining: <span id="todo-count"></span></h4>
 			<form onsubmit="app.controllers.todoCtrl.addTodo(event)">
-				<input type="text" name="description" placeholder="Task" required>
+				<input type="text" name="description" placeholder="New Task" required>
 			</form>
 			<ul id="todos">
 
@@ -42,7 +42,6 @@
 	</div> -->
 
 
-	<!-- FIXME ADD TO DO FORM IN HERE -->
 
 	<!-- <div id="weather">
 		Weather Stuff

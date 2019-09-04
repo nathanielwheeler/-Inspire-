@@ -8,10 +8,15 @@ function _drawTodos() {
 	console.log(_ts.Todos);
 
 	let template = ''
+	let todoCount = 0
 	_ts.Todos.forEach((t) => {
 		template += t.Template
+		todoCount++
 	})
 	document.getElementById('todos').innerHTML = template
+
+	// Draw Number of Todos
+	document.getElementById('todo-count').innerText = `${todoCount}`
 }
 
 //NOTE Keep an eye on your console for any of these errors
