@@ -59,8 +59,8 @@ export default class TodoService {
 			// 	}}
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-				_setState('todos', res.data.data)
 				this.getTodos()
+				_setState('todos', res.data.data)
 			})
 			.catch(err => console.log(err))
 
@@ -89,7 +89,15 @@ export default class TodoService {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
+		console.log("deleting todo");
+
+		todoApi.delete(todoId)
+			.then(res => {
+				this.getTodos()
+				_setState('todos', res.data.data)
+			})
 	}
-
-
 }
+
+
+

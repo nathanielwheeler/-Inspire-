@@ -45,6 +45,8 @@ export default class TodoController {
 
 	//NOTE This method will pass an Id to your service for the TODO that will need to be deleted
 	removeTodo(todoId) {
+		console.log('todoCtrl moving delete request to service');
+
 		_ts.removeTodo(todoId)
 	}
 

@@ -13,9 +13,9 @@ export default class ToDo {
         console.log('ToDo Template accessed')
         return `
         <li>
-            <input type='checkbox' name='completed' onclick='app.controllers.todoCtrl.toggleTodoStatus(${this._id})' ${(this.completed ? 'checked' : '')}>
+            <input type='checkbox' name='completed' onclick='app.controllers.todoCtrl.toggleTodoStatus("${this._id}")' ${(this.completed ? 'checked' : '')}>
             ${this.description}
-            <a onclick='app.controllers.todoCtrl.removeTodo(${this._id})'> X </a>
+            <button type='button' onclick='app.controllers.todoCtrl.removeTodo("${this._id}")'> X </button>
 		</li>`
 
     }
