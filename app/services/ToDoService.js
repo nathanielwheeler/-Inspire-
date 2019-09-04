@@ -41,6 +41,7 @@ export default class TodoService {
 				console.log("in the service getting todos: ", res.data.data);
 
 				_setState('todos', res.data.data)
+
 			})
 			// .catch(err => _setState('error', err.response.data))
 			.catch(err => console.error(err))
@@ -51,18 +52,18 @@ export default class TodoService {
 	// }
 
 	addTodo(todo) {
-		let redundantTodo = _state.todos.find(t => todo == t.description)
-		if (redundantTodo) {
-			if (window.confirm('You already have a list with this name.  Create a duplicate?')) {
-			}
-			debugger
-			todoApi.post('', todo)
-				.then(res => {
-					//TODO Handle this response from the server (hint: what data comes back, do you want this?)
-					_setState('todos', res.data.data)
-				})
-				.catch(err => console.error(err))
-		}
+		todoApi.post('', todo)
+			// let redundantTodo = _state.todos.find(t => todo == t.description)
+			// if (redundantTodo) {
+			// 	if (window.confirm('You already have a list with this name.  Create a duplicate?')) {
+			// 	}}
+			.then(res => {
+				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+				_setState('todos', res.data.data)
+				this.getTodos()
+			})
+			.catch(err => console.log(err))
+
 	}
 
 	toggleTodoStatus(todoId) {
